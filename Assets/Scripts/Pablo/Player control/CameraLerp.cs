@@ -6,8 +6,9 @@ using static UnityEngine.GraphicsBuffer;
 public class CameraLerp : MonoBehaviour
 {
     public Transform cam;
-    public Vector3 velT = new();
     public Vector3 offset = new();
+    public float smoothTime = 0.2f;
+    private Vector3 velT = new();
 
     void Start()
     {
@@ -21,7 +22,7 @@ public class CameraLerp : MonoBehaviour
             transform.position,
             desiredPos,
             ref velT,
-            0.2f
+            smoothTime
         );
     }
 }

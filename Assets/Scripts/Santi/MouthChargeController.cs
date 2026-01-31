@@ -15,6 +15,7 @@ public class MouthChargeController : MonoBehaviour
     [Range(0f, 1f)] public float jawThreshold = 0.9f;
     public UnityEvent eventoDisparo;
     public UnityEvent eventoCansado;
+    public UnityEvent eventoCargando;
 
     public float primaryChargeTime = 1.2f;
     public float secondaryChargeTime = 1.0f;
@@ -58,6 +59,7 @@ public class MouthChargeController : MonoBehaviour
         if (!primaryCompleted)
         {
             sliderPrimary.value += Time.deltaTime / primaryChargeTime;
+            eventoCargando.Invoke();
 
             if (sliderPrimary.value >= 1f)
             {

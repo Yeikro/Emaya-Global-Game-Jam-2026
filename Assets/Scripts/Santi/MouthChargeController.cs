@@ -21,6 +21,7 @@ public class MouthChargeController : MonoBehaviour
 
     public float primaryDecaySpeed = 8f;     // rápido
     public float secondaryDecaySpeed = 2.5f; // lento
+    public float finalDecayCharge = 2.5f;
 
     bool primaryCompleted;
     bool secondaryCompleted;
@@ -123,7 +124,7 @@ public class MouthChargeController : MonoBehaviour
             sliderPrimary.value, 0f, Time.deltaTime * primaryDecaySpeed);
 
         sliderSecondary.value = Mathf.MoveTowards(
-            sliderSecondary.value, 0f, Time.deltaTime * secondaryDecaySpeed);
+            sliderSecondary.value, 0f, Time.deltaTime * finalDecayCharge);
 
         if (sliderPrimary.value <= 0f && sliderSecondary.value <= 0f)
         {

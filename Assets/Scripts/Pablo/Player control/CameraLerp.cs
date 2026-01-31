@@ -10,11 +10,6 @@ public class CameraLerp : MonoBehaviour
     public float smoothTime = 0.2f;
     private Vector3 velT = new();
 
-    void Start()
-    {
-        
-    }
-
     private void LateUpdate()
     {
         Vector3 desiredPos = cam.position + offset;

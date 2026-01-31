@@ -10,7 +10,7 @@ public class AmbientalDamageBase : MonoBehaviour
     {
         if (other.TryGetComponent(out PlayerLife player))
         {
-            player.GetDamage(damage);
+            player.GetDamage(damage, Vector3.zero);
         }   
     }
 }

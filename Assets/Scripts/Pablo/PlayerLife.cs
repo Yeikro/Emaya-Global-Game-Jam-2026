@@ -12,11 +12,13 @@ public class PlayerLife : MonoBehaviour
         
     }
 
-    public void GetDamage(int damage, float stunDuration = 1.5f)
+    public void GetDamage(int damage, Vector3 direction, float stunDuration = 1.5f)
     {
         Debug.Log("Player received " + damage + " damage.");
+        direction = direction == Vector3.zero ? playerController.desiredVel : direction;
         playerController.blockNormalMovement = true;
-        playerController.rb.AddForce(playerController.desiredVel * pushForceMultiplier, ForceMode.Force);
+        playerController.rb.velocity = Vector3.zero;
+        playerController.rb.AddForce(direction * pushForceMultiplier, ForceMode.Force);
         Invoke(nameof(ActivateNormalMovement), stunDuration);
     }
 

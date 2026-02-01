@@ -5825,7 +5825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 256742707}
-  offset: {x: 0, y: 10, z: -7}
+  offset: {x: 0, y: 20, z: -7}
   smoothTime: 0.6
 --- !u!1001 &1148269615
 PrefabInstance:

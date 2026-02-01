@@ -11,6 +11,11 @@ public class AnimaSola : MonoBehaviour
         animator.SetInteger("estado", (int)estado);
     }
 
+    public void CambiarFrente(float frente)
+    {
+        animator.SetFloat("delante", frente);
+    }
+
     [ContextMenu("Cambiar Idle")]
     public void CambiarAIdle()
     {

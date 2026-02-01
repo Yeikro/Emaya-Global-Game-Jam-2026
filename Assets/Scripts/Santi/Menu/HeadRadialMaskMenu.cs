@@ -30,13 +30,11 @@ public class HeadRadialMaskMenu : MonoBehaviour
 
     int currentIndex = 0;
     bool animando = false;
-    public static HeadRadialMaskMenu instance;
 
     Vector2 posLeft, posCenter, posRight;
 
     void Start()
     {
-        instance = this;
         posLeft = slotLeft.anchoredPosition;
         posCenter = slotCenter.anchoredPosition;
         posRight = slotRight.anchoredPosition;
@@ -49,11 +47,6 @@ public class HeadRadialMaskMenu : MonoBehaviour
     // =========================
     // API
     // =========================
-
-    public int GetActualIndex()
-    {
-        return currentIndex;
-    }
 
     public void GirarDerecha()
     {
@@ -235,8 +228,10 @@ public class HeadRadialMaskMenu : MonoBehaviour
     Vector2 posLeft, posCenter, posRight;
     Vector2 pBackLeft, pBackRight;
 
+    public static HeadRadialMaskMenu instance;
     void Start()
     {
+        instance = this;
         posLeft = slotLeft.anchoredPosition;
         posCenter = slotCenter.anchoredPosition;
         posRight = slotRight.anchoredPosition;
@@ -249,6 +244,12 @@ public class HeadRadialMaskMenu : MonoBehaviour
         ResetVisual();
     }
 
+
+
+    public int GetActualIndex()
+    {
+        return currentIndex;
+    }
     public void GirarDerecha()
     {
         if (animando || sections.Count < 3) return;

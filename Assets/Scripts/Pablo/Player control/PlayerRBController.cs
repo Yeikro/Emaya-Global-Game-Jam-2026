@@ -10,16 +10,19 @@ public class PlayerRBController : MonoBehaviour
 
     [Header("Movimiento")]
     public float moveSpeed = 5f;
+    public float rotationSpeed = 6f;
+    public bool blockNormalMovement;
+    public Vector3 desiredVel;
 
     [Header("Refs")]
     public Camera mainCamera;
+    public Rigidbody rb;
+    public AnimaSola anim;
 
-    Rigidbody rb;
-    Vector3 desiredVel;
+    Vector3 targetPos;
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody>();
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 
@@ -34,16 +37,33 @@ public class PlayerRBController : MonoBehaviour
         // calcular velocidad deseada en Update (input)
         Vector2 input = moveAction.action.ReadValue<Vector2>();
         Vector3 dir = new Vector3(input.x, 0, input.y).normalized;
-        desiredVel = dir * moveSpeed;
 
-        ApuntarConMouse(); // solo rota (no mueve)
+
+
+        desiredVel = dir * moveSpeed;
+        if (!blockNormalMovement)
+        {
+            ApuntarConMouse(); // solo rota (no mueve)
+
+            if (dir.magnitude > 0.1f)
+                anim.CambiarACaminar();
+            else
+                anim.CambiarAIdle();
+        }
+        else
+        {
+            Caer(); // rota según velocidad actual al caer
+        }
     }
 
     void FixedUpdate()
     {
         // aplicar movimiento suave en físicas
-        Vector3 targetPos = rb.position + desiredVel * Time.fixedDeltaTime;
-        rb.MovePosition(targetPos);
+        if (!blockNormalMovement)
+        {
+            targetPos = rb.position + desiredVel * Time.fixedDeltaTime;
+            rb.MovePosition(targetPos);
+        }
     }
 
     void ApuntarConMouse()
@@ -62,5 +82,25 @@ public class PlayerRBController : MonoBehaviour
         // Si quieres mantener el plano Y=0:
         // Plane ground = new Plane(Vector3.up, Vector3.zero);
         // if (ground.Raycast(ray, out float enter)) { ... }
+    }
+
+    void Caer()
+    {
+        Vector3 velocity = rb.velocity;
+
+        velocity.y = 0f;
+
+        if (velocity.sqrMagnitude > 0.1f)
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(velocity.normalized);
+
+            Quaternion tiltRotation = lookRotation * Quaternion.Euler(90, 0, 0);
+
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation,
+                tiltRotation,
+                rotationSpeed * Time.fixedDeltaTime
+            );
+        }
     }
 }

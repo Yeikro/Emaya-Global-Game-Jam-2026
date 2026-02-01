@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Morion3.unity
     guid: 34eba49ae2d8d874093d6b51af633aa1
+  - enabled: 1
+    path: Assets/Scenes/Pablo3.unity
+    guid: d34367942aab82f4eac427968f9c1792
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b,
       type: 3}

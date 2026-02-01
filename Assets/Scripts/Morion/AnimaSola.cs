@@ -39,6 +39,11 @@ public class AnimaSola : MonoBehaviour
     {
         CambiarEstado(EstadosAnimacion.bailando);
     }
+    [ContextMenu("Cambiar Caido")]
+    public void CambiarACaido()
+    {
+        CambiarEstado(EstadosAnimacion.caido);
+    }
 }
 
 public enum EstadosAnimacion
@@ -47,4 +52,5 @@ public enum EstadosAnimacion
     caminando = 3,
     cansado = 1, 
     bailando = 2,
+    caido = 100
 }

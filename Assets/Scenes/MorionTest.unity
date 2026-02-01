@@ -171,6 +171,89 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &784093406
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 11a5353026d31074b9c0071217313866,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2784374
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11a5353026d31074b9c0071217313866,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2784374
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11a5353026d31074b9c0071217313866,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2784374
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11a5353026d31074b9c0071217313866,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.49
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11a5353026d31074b9c0071217313866,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11a5353026d31074b9c0071217313866,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11a5353026d31074b9c0071217313866,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11a5353026d31074b9c0071217313866,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11a5353026d31074b9c0071217313866,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11a5353026d31074b9c0071217313866,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11a5353026d31074b9c0071217313866,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11a5353026d31074b9c0071217313866,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11a5353026d31074b9c0071217313866,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 11a5353026d31074b9c0071217313866,
+        type: 3}
+      propertyPath: m_Name
+      value: AncianoEmbera
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 11a5353026d31074b9c0071217313866, type: 3}
 --- !u!1 &839883757
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,7 +525,7 @@ PrefabInstance:
     - target: {fileID: 1903595649102006786, guid: be000fe0715502b4fb7f94cf3ac44f9f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.79767835
+      value: 2.488
       objectReference: {fileID: 0}
     - target: {fileID: 1903595649102006786, guid: be000fe0715502b4fb7f94cf3ac44f9f,
         type: 3}
@@ -510,7 +593,7 @@ PrefabInstance:
     - target: {fileID: 6417209062089041932, guid: df181150f0a920e42a9544bb610762a2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.86584914
+      value: 1.406
       objectReference: {fileID: 0}
     - target: {fileID: 6417209062089041932, guid: df181150f0a920e42a9544bb610762a2,
         type: 3}
@@ -778,3 +861,4 @@ SceneRoots:
   - {fileID: 2293363418232422109}
   - {fileID: 6829599107928097762}
   - {fileID: 7211018023795835797}
+  - {fileID: 784093406}

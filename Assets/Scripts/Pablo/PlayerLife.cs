@@ -7,11 +7,6 @@ public class PlayerLife : MonoBehaviour
     public PlayerRBController playerController;
     public float pushForceMultiplier = 5f;
 
-    void Start()
-    {
-        
-    }
-
     public void GetDamage(int damage, Vector3 direction, float stunDuration = 1.5f)
     {
         Debug.Log("Player received " + damage + " damage.");
@@ -19,17 +14,15 @@ public class PlayerLife : MonoBehaviour
         playerController.blockNormalMovement = true;
         playerController.rb.velocity = Vector3.zero;
         playerController.rb.AddForce(direction * pushForceMultiplier, ForceMode.Force);
-        playerController.anim.CambiarACansado();
-        Invoke(nameof(ActivateNormalMovement), stunDuration);
+        playerController.anim.CambiarACaido();
+        StartCoroutine(ActivateNormalMovement(stunDuration));
     }
 
-    private void ActivateNormalMovement()
+    private IEnumerator ActivateNormalMovement(float stunDuration)
     {
+        yield return new WaitForSeconds(stunDuration);
+        playerController.anim.CambiarACaminar();
+        yield return new WaitForSeconds(2);
         playerController.blockNormalMovement = false;
-    }
-
-    void Update()
-    {
-        
     }
 }

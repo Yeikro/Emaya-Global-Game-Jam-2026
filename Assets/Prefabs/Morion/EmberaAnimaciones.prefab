@@ -395,6 +395,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mono
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b0b302e63b109064c902c3e1686a79c2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

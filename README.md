@@ -1,7 +1,7 @@
-# 🎭 EMAYÁ: Espíritus de la Máscara  
+# 🎭 EMAYÁ
 
 <p align="center">
-  <img src="/Assets/Sprites/UIEMAYA.png" alt="EMAYÁ Banner" width="800"/>
+  <img src="/Assets/Sprites/UIEMAYATITULO.png" alt="EMAYÁ Banner" width="800"/>
 </p>
 
 <p align="center">
